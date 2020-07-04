@@ -2,12 +2,15 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component'; //6) Estamos importando o AppComponent do arquivo app.component.ts
-
+//24) Importar o componente criado
+import { PersonsComponent } from './persons/persons.component'
 @NgModule({
   declarations: [
-    AppComponent //2) Aqui declararemos os componentes que vamos usar dentro desse módulo
+    AppComponent, //2) Aqui declararemos os componentes que vamos usar dentro desse módulo
     //Se tivermos múltiplos módulos, cada módulo pode definir seus próprios componentes que podemos usar dentro desse módulo
+    PersonsComponent //25) Adicionamos em declarações
   ],
+  //26) Basta agora adicionar a tag em app.component.html, ou deletar todo o conteudo de lá e adicionar essa tag.
   imports: [
     BrowserModule //3) Podemos aqui importar outros módulos para esse módulo
     //BrowserModule é um módulo embutido no Angular que desbloqueia certfas funcionalidades na nossa aplicação
