@@ -6,7 +6,12 @@
 <!-- * * * * * * * * * Delete the template below * * * * * * * * * * -->
 <!-- * * * * * * * to get started with your project! * * * * * * * * -->
 <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
-
+<!-- 15) Conteudo HTML responsável pela página padrão do Angular!!
+Porém é importante saber que isso não é um arquivo HTML que será renderizado pelo navegador assim
+Angular passa isso para instruções javascript que serão montadas no DOM, renderizando dessa forma.app-root
+Caso você inspecione o HTML da pagina, você verá apenas app-root, esse código não será visto lá :)
+Mas, se inspecionar de fato o DOM, verá todo o código extra, dentro de app-root
+Isso demonstra que Angular é apenas javascript executado na sua pagina carregado e renderizado dinamicamente-->
 <style>
   :host {
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";

@@ -8,6 +8,9 @@
   <link rel="icon" type="image/x-icon" href="favicon.ico">
 </head>
 <body>
-  <app-root></app-root>
+  <app-root></app-root> <!--13) Aqui está a tag! O Angular analisa esse html porque no módulo do aplicativo definimos o componente app module
+  como raiz. Não escaneia index.html para nenhum outro componente que possamos criar.
+  A menos que coloquemos mais componentes como bootstrap, mas, isso é avançado e tipicamente só se tem um componente raiz
+  Os outros componentes são adicionados diferentes. Por isso o seletor é importante, para essa montagem do componente raiz no HTML-->
 </body>
 </html>
