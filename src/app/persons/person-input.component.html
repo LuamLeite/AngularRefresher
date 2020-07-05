@@ -2,11 +2,27 @@
 <label for="name">Name</label>
 <!--50) Adicionaremos uma referência local no input com #, essa referência é reconhecida pelo Angular, só vale nesse
 arquivo, porém isso não é problema para o que queremos fazer, pois queremos passar essa referência para nosso botão-->
-<input type="text" id="name" #personNameEl>
+<!-- 55)Agora modificaremos abaixo adicionando twowaybidning com o uso do NgModel e a nova propriedade que implementamos
+isso faz com que o Angular viige mudanças no valor do elemento e atualize a propriedade automaticamente, e vice e versa-->
+<input type="text" id="name" [(ngModel)]="enteredPersonName">
+<!--56) Porém está indisponivel, teremos que importar um novo @ no app.module.ts-->
 <!--51) Não queremos passar o elemento todo, apenas o valor, então personNameEl.value é correto, agora podemos tratar
 o que acontecerá com o valor em person-input.component.ts-->
-<button (click)="onCreatePerson(personNameEl.value)">Create</button> <!--45) Adicionar um botão, e estilo css, então criaremos um person-input.component.css-->
+<!--58) Feito isso, tiramos o personNameEL.value como parametro abaixo, não precisamos mais passar ele, o ngModel
+atualiza entre enteredPersonName do html e do person-input-component.ts e atualiza sozinho-->
+<button (click)="onCreatePerson()">Create</button> <!--45) Adicionar um botão, e estilo css, então criaremos um person-input.component.css-->
 <!--47) Agora queremos implementar que, cada vez que esse botão for pressionado, adicionaremos o texto como uma entrada
 na listagem. Para isso precisaremos primeiro de um listener para esse click do botão-->
 <!--48) Aqui, adicionaremos o click e o que deverá ser executado quando esse clique acontecer,nesse caso um método que ainda vamos criar
 no person-input.component.ts-->
+
+<!--53)Usar referência local com # é ok. Mas, existe outra maneira que usa uma propriedade chamada two way binding
+Já vimos property binding que usa os [] no html, que se usa no seu próprio compomnente criado para binding.
+Mas, também seria possível fazer isso em elementos html normais , como no exemplo abaixo-->
+<!-- <input type="text" id="name" [value] = "1+1">  -->
+<!-- 52) Que seria impresso como 2 no navegador, já teria um valor padrão definido no Input com isso. A razão é que
+entre os "" o valor é tratado como uma expressão válida do javascript, para se passar uma string, precisaria ser "'frase'", com
+um par extra de '' para detonar para o javascript que é uma string.-->
+<!-- 53) Isso é apenas um exemplo para saber que property binding está disponível para todos os elementos do html.
+Mas, não queremos usar isso aqui, queremos usar uma nova sintaxe, porém primeiro precisamos adicionar uma nova propriedade
+no person-input.component.ts -->

@@ -6,6 +6,8 @@ import { AppComponent } from './app.component'; //6) Estamos importando o AppCom
 import { PersonsComponent } from './persons/persons.component';
 //40) Adicionando person-imput-component
 import {PersonInputComponent} from './persons/person-input.component';
+//57) Importando o FormsModule para usar formularios, input do usuario e two-way-binding
+import {FormsModule} from '@angular/forms';
 @NgModule({
   declarations: [
     AppComponent, //2) Aqui declararemos os componentes que vamos usar dentro desse módulo
@@ -18,6 +20,8 @@ import {PersonInputComponent} from './persons/person-input.component';
     BrowserModule //3) Podemos aqui importar outros módulos para esse módulo
     //BrowserModule é um módulo embutido no Angular que desbloqueia certfas funcionalidades na nossa aplicação
     //Nosso módulo principal depende desse módulo de navegador integrado
+    //58) Adicionando nos Imports
+    ,FormsModule
   ],
   providers: [], // 4) Será revisitado depois
   bootstrap: [AppComponent] //5) Bootstrap é sobre o componente raiz, onde todos os outros componentes estão, todos ficam dentro do componente raiz
