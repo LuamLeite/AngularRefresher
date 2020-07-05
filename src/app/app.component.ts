@@ -16,4 +16,8 @@ export class AppComponent { //7) Classe que exportamos nesse arquivo, é a impor
   //28) Digamos que tenhamos uma lista de pessoas aqui em nosso appcomponent, em nosso componente raiz
   persons = ['Max', 'Manuel', 'Anna'];
   //29)Angular possui propriedades poderosas, uma é property binding. Queremos dar bind nessa propriedade no persons.component
+  //69) Agora a informação $event encontrará aqui o listener
+  onPersonCreated(name: string){
+    this.persons.push(name);
+  }
 }

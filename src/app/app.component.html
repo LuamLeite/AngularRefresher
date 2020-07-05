@@ -15,7 +15,13 @@ Isso demonstra que Angular é apenas javascript executado na sua pagina carregad
 <!-- 27) Apagando todo o conteudo e colocando aqui a tag, teremos na nossa pagina, exatamente o que colocamos no html -->
 <!-- 34) Para ligação de propriedade Angular, se adiciona [] e o nome da propriedade -->
 <!-- 42) Adicionando para ser renderizado antes da lista de pessoas-->
-<app-person-input></app-person-input>
+<!--68) Adicionando a informação emitida com o output e toda vez que personCreate for executado, executaremos outra função
+que no caso será a onPersonCreate, que adicionaremos no app.component.ts, dessa forma sempre que do html, o click chamar a função
+para criar a pessoa, automaticamente essa função será chamada no app.component.ts, a OnPersonCreate. No app.component.ts é onde
+a lista de pessoas está como persons, então lá adicionaremos a nova entrada!
+Porém é importante freezar, que quando a informação é passada pelo emit, temos que usar um identificador especial do Angular
+que no caso é o $event. Quando o evento acontecer e for emitido por emit, precisaremos passar para a função $event para não ser perdida a informação-->
+<app-person-input (personCreate)="onPersonCreated($event)"></app-person-input>
 
 <app-persons [personList]="persons"></app-persons>
 <!-- 35) Como estamos no template de app.component, podemos usar qualquer propriedade de app.component, então usamos a persons para atribuir o valor!
