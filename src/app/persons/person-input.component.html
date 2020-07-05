@@ -1,4 +1,12 @@
 <!--44) Adicionando input-->
 <label for="name">Name</label>
-<input type="text" id="name">
-<button>Create</button> <!--45) Adicionar um botão, e estilo css, então criaremos um person-input.component.css-->
+<!--50) Adicionaremos uma referência local no input com #, essa referência é reconhecida pelo Angular, só vale nesse
+arquivo, porém isso não é problema para o que queremos fazer, pois queremos passar essa referência para nosso botão-->
+<input type="text" id="name" #personNameEl>
+<!--51) Não queremos passar o elemento todo, apenas o valor, então personNameEl.value é correto, agora podemos tratar
+o que acontecerá com o valor em person-input.component.ts-->
+<button (click)="onCreatePerson(personNameEl.value)">Create</button> <!--45) Adicionar um botão, e estilo css, então criaremos um person-input.component.css-->
+<!--47) Agora queremos implementar que, cada vez que esse botão for pressionado, adicionaremos o texto como uma entrada
+na listagem. Para isso precisaremos primeiro de um listener para esse click do botão-->
+<!--48) Aqui, adicionaremos o click e o que deverá ser executado quando esse clique acontecer,nesse caso um método que ainda vamos criar
+no person-input.component.ts-->

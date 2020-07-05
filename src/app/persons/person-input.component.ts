@@ -7,4 +7,8 @@ import {Component} from '@angular/core';
     styleUrls: ['./person-input.component.css'] //<!--46) Um array, você pode ter mais de um arquivo de styling-->
   })
   export class PersonInputComponent {
+    //49) adicionaremos aqui o método
+    onCreatePerson(personName: string){ //52) Adicionaremos o parâmetro que será recebido com o valor
+      console.log('Created a person:' + personName);
+    }
 }
