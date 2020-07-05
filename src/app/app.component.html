@@ -21,8 +21,20 @@ para criar a pessoa, automaticamente essa função será chamada no app.componen
 a lista de pessoas está como persons, então lá adicionaremos a nova entrada!
 Porém é importante freezar, que quando a informação é passada pelo emit, temos que usar um identificador especial do Angular
 que no caso é o $event. Quando o evento acontecer e for emitido por emit, precisaremos passar para a função $event para não ser perdida a informação-->
-<app-person-input (personCreate)="onPersonCreated($event)"></app-person-input>
+<!-- <app-person-input (personCreate)="onPersonCreated($event)"></app-person-input>
 
-<app-persons [personList]="persons"></app-persons>
+<app-persons [personList]="persons"></app-persons> -->
 <!-- 35) Como estamos no template de app.component, podemos usar qualquer propriedade de app.component, então usamos a persons para atribuir o valor!
 Também poderiamos colocar um valor como = ['michael', 'pedro']. Fazendo dessa foram o valor já é passado-->
+
+
+<!--70) Agora, vamos dizer que você quer que ao inserir uma pessoa, a listagem seja feita em outra página.
+Não será realmente outra pagina pois Angular é Single Page Application, mas, dar a ilusão de outra página.
+Pode-se fazer isso usando routing.
+Isso essencialmente permite ao Angular ler a URL do seu navegador, e renderizar diferentes informações
+de acordo com sua URL para replicar o comportamento de multipage applications.
+Para setar routing, se adiciona um novo módulo, que normalmente é app-routing.module.ts-->
+
+<!--85)Adicionamos agora as tags novas router-outlet, uma diretiva do Angular para  roteamento, porém
+nossas paginas e bindings pararão de funcionar, pois não usaremos mais a tag diretamente, nem mesmo o binding como antes
+então teremos que usar services para voltar a passar dados. -->

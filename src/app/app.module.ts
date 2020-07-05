@@ -8,6 +8,8 @@ import { PersonsComponent } from './persons/persons.component';
 import {PersonInputComponent} from './persons/person-input.component';
 //57) Importando o FormsModule para usar formularios, input do usuario e two-way-binding
 import {FormsModule} from '@angular/forms';
+//83) Importando o AppRoutingModule que criamos
+import { AppRoutingModule }from './app-routing.module';
 @NgModule({
   declarations: [
     AppComponent, //2) Aqui declararemos os componentes que vamos usar dentro desse módulo
@@ -22,6 +24,8 @@ import {FormsModule} from '@angular/forms';
     //Nosso módulo principal depende desse módulo de navegador integrado
     //58) Adicionando nos Imports
     ,FormsModule
+    //84) Adicionando aos imports. Agora modificaremos os componentes no app.component.html para refletir o roteamento
+    ,AppRoutingModule
   ],
   providers: [], // 4) Será revisitado depois
   bootstrap: [AppComponent] //5) Bootstrap é sobre o componente raiz, onde todos os outros componentes estão, todos ficam dentro do componente raiz
