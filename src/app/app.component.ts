@@ -13,5 +13,7 @@ import { Component } from '@angular/core'; //9) Importado daqui
   //Em toda a renderização da tag app-root e seu html, teremos h1 com texto vermelho.
 })
 export class AppComponent { //7) Classe que exportamos nesse arquivo, é a importada em app.module.ts
-  title = 'ng-refresher';
+  //28) Digamos que tenhamos uma lista de pessoas aqui em nosso appcomponent, em nosso componente raiz
+  persons = ['Max', 'Manuel', 'Anna'];
+  //29)Angular possui propriedades poderosas, uma é property binding. Queremos dar bind nessa propriedade no persons.component
 }

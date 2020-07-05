@@ -1,1 +1,6 @@
 <p> Slowly but surely </p>
+<ul> <!--36) Usaremos uma diretiva para exibir uma lista com todos os elementos da nossa propriedade lista.
+  Uma diretiva é um código que usarmeos no nosso código HTML e será entendida pelo Angular para fazer algo.
+   A diretiva *ngFor que é importada pelo BrowserModule como fizemos anteriormente. *ngFor é usado para um for com código html-->
+  <li *ngFor="let person of personList"> {{person}} </li> <!--37) Agora usamos interpolação de string para imprimir cada valor da diretiva//componente para HTML-->
+</ul>
