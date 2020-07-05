@@ -3,12 +3,15 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component'; //6) Estamos importando o AppComponent do arquivo app.component.ts
 //24) Importar o componente criado
-import { PersonsComponent } from './persons/persons.component'
+import { PersonsComponent } from './persons/persons.component';
+//40) Adicionando person-imput-component
+import {PersonInputComponent} from './persons/person-input.component';
 @NgModule({
   declarations: [
     AppComponent, //2) Aqui declararemos os componentes que vamos usar dentro desse módulo
     //Se tivermos múltiplos módulos, cada módulo pode definir seus próprios componentes que podemos usar dentro desse módulo
-    PersonsComponent //25) Adicionamos em declarações
+    PersonsComponent, //25) Adicionamos em declarações
+    PersonInputComponent //41) Adicionando em declarations
   ],
   //26) Basta agora adicionar a tag em app.component.html, ou deletar todo o conteudo de lá e adicionar essa tag.
   imports: [

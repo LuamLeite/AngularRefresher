@@ -14,6 +14,9 @@ Mas, se inspecionar de fato o DOM, verá todo o código extra, dentro de app-roo
 Isso demonstra que Angular é apenas javascript executado na sua pagina carregado e renderizado dinamicamente-->
 <!-- 27) Apagando todo o conteudo e colocando aqui a tag, teremos na nossa pagina, exatamente o que colocamos no html -->
 <!-- 34) Para ligação de propriedade Angular, se adiciona [] e o nome da propriedade -->
+<!-- 42) Adicionando para ser renderizado antes da lista de pessoas-->
+<app-person-input></app-person-input>
+
 <app-persons [personList]="persons"></app-persons>
 <!-- 35) Como estamos no template de app.component, podemos usar qualquer propriedade de app.component, então usamos a persons para atribuir o valor!
-Também poderiamos colocar um valor como = ['michael', 'pedro'].-->
+Também poderiamos colocar um valor como = ['michael', 'pedro']. Fazendo dessa foram o valor já é passado-->
