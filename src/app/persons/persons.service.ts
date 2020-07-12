@@ -17,6 +17,8 @@ persons = ['Max', 'Manuel', 'Anna'];
 addPerson(name: string)
 {
   this.persons.push(name);
+  //124) Verificando se funciona
+  console.log(name);
 }
 //93) Agora que temos nosso service numa versão básica vamos começar a usa-lo em nossos componentes, vamos para o persons.component.ts
 }
