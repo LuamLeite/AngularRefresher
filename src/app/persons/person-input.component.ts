@@ -2,7 +2,6 @@
 //65)) Importamos a classe EventEmitter
 //119) Não precisamos mais de Output nem EventEmitter tendo o Service
 import {Component} from '@angular/core'; //63) Vamos importar Output para fazer um binding de forma a fazer uma nova entrada na listagem
-import { ClassGetter } from '@angular/compiler/src/output/output_ast';
 import { PersonsService } from './persons.service';
 
   @Component({
