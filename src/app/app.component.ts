@@ -14,10 +14,12 @@ import { Component } from '@angular/core'; //9) Importado daqui
 })
 export class AppComponent { //7) Classe que exportamos nesse arquivo, é a importada em app.module.ts
   //28) Digamos que tenhamos uma lista de pessoas aqui em nosso appcomponent, em nosso componente raiz
-  persons = ['Max', 'Manuel', 'Anna'];
+  //92)Movendo o array persons para o service persons.service.ts
+  // persons = ['Max', 'Manuel', 'Anna'];
   //29)Angular possui propriedades poderosas, uma é property binding. Queremos dar bind nessa propriedade no persons.component
   //69) Agora a informação $event encontrará aqui o listener
-  onPersonCreated(name: string){
-    this.persons.push(name);
-  }
+  //93)Como estamos tirando o array daqui, esse método também não será mais necessário aqui
+  // onPersonCreated(name: string){
+  //   this.persons.push(name);
+  // }
 }
