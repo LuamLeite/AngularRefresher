@@ -38,4 +38,15 @@ Para setar routing, se adiciona um novo módulo, que normalmente é app-routing.
 <!--85)Adicionamos agora as tags novas router-outlet, uma diretiva do Angular para  roteamento, porém
 nossas paginas e bindings pararão de funcionar, pois não usaremos mais a tag diretamente, nem mesmo o binding como antes
 então teremos que usar services para voltar a passar dados. -->
+<!--123) Eu errei feio colocando aquela tag de volta, a router-outlet já cuida de tudo-->
+<!--124) Adicionando navegação. / para a inicial -->
+<!-- 126) Comentando essa linha para o novo modelo
+<a href= "/">PersonList</a> | <a href="/input">Input</a> -->
+<!-- 125) O problema disso é que quando clicamos num link ancora da tag a, a aplicação toda recarrega, perdemos completamente
+o estado da outra página. Para consertar isso, ao inves de a href, usamos uma diretiva do angular, [routerLink]="'path'"
+Mas, existe um atalho se estamos fazendo para passar uma string para uma propriedade, podemos tirar os [] e os single quotes ''-->
+<a routerLink="/">Person List</a> | <a href="/input">Input</a>
+<!-- Isso também faz com que a informação não seja perdida de uma página para a outra, é o que possibilita a comunicação entre elas
+terem "persistência"-->
+<hr>
 <router-outlet></router-outlet>
