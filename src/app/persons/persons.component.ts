@@ -29,11 +29,13 @@ export class PersonsComponent implements OnInit//19) Nota que ao exportar Classe
 //@Input() personList: string[]; //33) O que isso diz para o Angular é que a propriedade personList desse componente pode ser bound/ligada por fora. Agora podemos ir no app.component.html
 personList: string[];
 //)111 Nova propriedade privada, agora podemos no construtor fazer essa propriedade ficar disponivel na classe toda
-private personService: PersonsService;
+//115) Comentando essa linha abaixo para mostrar o atalho
+//private personService: PersonsService;
 //96)Fizemos uma lista de pessoas que iremos pegar, mas, para isso, precisamos informar ao Angular que é injetável
 //97)Adicionaremos um construtor para o Angular conseguir saber tudo que esse componente precisa de injeção
 //98)Essa função interna será executada toda vez que Angular criar uma nova instancia desse componente
-constructor(prsService: PersonsService) {
+//116 Implementando o atalho
+constructor(private prsService: PersonsService) {
   //101 Agora podemos colocar this.personList = prsService.persons, ou seja, aqui personList
   //corresponderá a prsService.persons
   //103 Conseguimos usar a lista desse jeito, porém, essa não é a maneira recomendada
@@ -48,14 +50,18 @@ constructor(prsService: PersonsService) {
   5-Destroi antes de remover do DOM
   E é possível adicionar comandos específicos no Angular, de forma que ele execute em cada um desses hooks*/
   //112) E agora faremos como deve ser feito:
-  this.personService = prsService;
+  //117 Essa linha abaixo não é mais necessária, o atalho faz automaticamente
+  //this.personService = prsService;
 }
 //109) Criação do componente
 ngOnInit(){
   //110)Precisariamos colocar aqui para a personList pegar do service dessa forma ->this.personList = prsService.persons;
   //Porém prsService só fica disponivel no constructor, então criaremos uma nova propriedade privada
   //113) Agora implementando
-  this.personList = this.personService.persons;
+  //118) Modificando agora para acessar no atalho
+  this.personList = this.prsService.persons;
+  //114) Essa implementação que fizemos é tão usada que existe um atalho, onde no construtor podemos implementar a variável privada
+  //E o service ficará disponivel para todo o código
 }
 //Adicionamos aqui o prsService(podemos mudar esse nome), porém é importante ao lado a declaração do tipo que precisamos
 //99) E adicionar no topo o import desse tipo
