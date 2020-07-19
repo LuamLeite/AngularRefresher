@@ -61,20 +61,23 @@ constructor(private prsService: PersonsService) {
 }
 //109) Criação do componente
 ngOnInit(){
+  //170 Vamos mudar a ordem para garantir que o subscribe esteja antes da recepção do valor
+  //171 Por enquanto com isso, não poderemos adicionar mais nomes, nem deletar, pois ainda não foi adaptado, e tudo bem
+  this.personListSubs = this.prsService.personsChanged.subscribe(persons => {
+  this.personList = persons;
+  });
   //110)Precisariamos colocar aqui para a personList pegar do service dessa forma ->this.personList = prsService.persons;
   //Porém prsService só fica disponivel no constructor, então criaremos uma nova propriedade privada
   //113) Agora implementando
   //118) Modificando agora para acessar no atalho
-  this.personList = this.prsService.persons;
+  //163) Não iniciaremos mais nossa persons dessa forma: this.personList = this.prsService.persons;
+  this.prsService.fetchPersons(); //164) E sim dessa forma, agora indo no persons.service.ts novamente
   //143) Acima está com um erro, pois ainda precisamos ter acesso a persons, então corrigirei de privado para public no persons.service.ts
   //144) Subscribe para ouvir a valores novos, assim pegaremos data que for emitida
   //154) Adicionando this.personListSubs = para guardar todas as subscrições
-  this.personListSubs = this.prsService.personsChanged.subscribe(persons => {
-    this.personList = persons;
     //145) Assim o valor sempre estará atualizado
     //146) MUITO IMPORTANTE: Quando o objeto for destruido, devemos usar unsubscribe para não deixar
     //vários subjects juntando e acabar dando vazamento de memória, ultilizaremos um gancho na classe
-  });
   //114) Essa implementação que fizemos é tão usada que existe um atalho, onde no construtor podemos implementar a variável privada
   //E o service ficará disponivel para todo o código
 }

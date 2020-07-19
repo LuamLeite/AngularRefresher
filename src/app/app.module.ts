@@ -9,7 +9,9 @@ import {PersonInputComponent} from './persons/person-input.component';
 //57) Importando o FormsModule para usar formularios, input do usuario e two-way-binding
 import {FormsModule} from '@angular/forms';
 //83) Importando o AppRoutingModule que criamos
-import { AppRoutingModule }from './app-routing.module';
+import { AppRoutingModule } from './app-routing.module';
+//156) Importando Módulo para poder fazer e receber requisições HTPP
+import { HttpClientModule } from '@angular/common/http';
 @NgModule({
   declarations: [
     AppComponent, //2) Aqui declararemos os componentes que vamos usar dentro desse módulo
@@ -25,10 +27,12 @@ import { AppRoutingModule }from './app-routing.module';
     //58) Adicionando nos Imports
     ,FormsModule
     //84) Adicionando aos imports. Agora modificaremos os componentes no app.component.html para refletir o roteamento
-    ,AppRoutingModule
-  ],
+    ,AppRoutingModule,
+    HttpClientModule //157) Isso permite injetar o Angular HTTP em qualquer lugar da aplicação, agora indo para PersonsService
+    ],
   providers: [], // 4) Será revisitado depois
-  bootstrap: [AppComponent] //5) Bootstrap é sobre o componente raiz, onde todos os outros componentes estão, todos ficam dentro do componente raiz
+  bootstrap: [AppComponent], //5) Bootstrap é sobre o componente raiz, onde todos os outros componentes estão, todos ficam dentro do componente raiz
+
 })
 export class AppModule { }
 
